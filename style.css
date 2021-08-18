@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
+
+:root{
+    --background: hsl(222, 26%, 31%);
+    --background-controls: hsl(223, 31%, 20%);
+    --background-display: hsl(224, 36%, 15%);
+
+    --key-background-del: hsl(225, 21%, 49%);
+    --key-shadow-del: hsl(224, 28%, 35%);
+
+    --key-background-equals: hsl(6, 63%, 50%);
+    --key-shadow-equals: hsl(6, 70%, 34%);
+
+    --key-background-nums: hsl(30, 25%, 89%);
+    --key-shadow-nums: hsl(28, 16%, 65%);
+
+    --txt-color-controls: hsl(221, 14%, 31%);
+    --txt-color-display: hsl(0, 0%, 100%);
+    --txt-color-equals: hsl(0, 0%, 100%);
+    --txt-color-del: hsl(0, 0%, 100%);
+
+    --transition-delay: .5s;
+    --transform-x: 0px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    background-color: var(--background);
+
+    transition: var(--transition-delay);
+}
+
+body.theme_2 {
+    --background: hsl(0, 0%, 90%);
+    --background-controls: hsl(0, 5%, 81%);
+    --background-display: hsl(0, 0%, 93%);
+
+    --key-background-del: hsl(185, 42%, 37%);
+    --key-shadow-del: hsl(185, 58%, 25%);
+
+    --key-background-equals: hsl(25, 98%, 40%);
+    --key-shadow-equals: hsl(25, 99%, 27%);
+
+    --key-background-nums: hsl(45, 7%, 89%);
+    --key-shadow-nums: hsl(35, 11%, 61%);
+
+    --txt-color-controls: hsl(60, 10%, 19%);
+    --txt-color-display: hsl(60, 10%, 19%);
+    --txt-color-equals: hsl(0, 0%, 100%);
+
+    --transform-x: 16px;
+}
+
+body.theme_3 {
+    --background: hsl(268, 75%, 9%);
+    --background-controls: hsl(268, 71%, 12%);
+    --background-display: hsl(268, 71%, 12%);
+
+    --key-background-del: hsl(281, 89%, 26%);
+    --key-shadow-del: hsl(285, 91%, 52%);
+
+    --key-background-equals: hsl(176, 100%, 44%);
+    --key-shadow-equals: hsl(177, 92%, 70%);
+
+    --key-background-nums: hsl(268, 47%, 21%);
+    --key-shadow-nums: hsl(290, 70%, 36%);
+
+    --txt-color-controls: hsl(52, 100%, 62%);
+    --txt-color-display: hsl(52, 100%, 62%);
+    --txt-color-equals: hsl(198, 20%, 13%);
+
+    --transform-x: 34px;
+}
+
+p {
+    margin: 0;
+}
+
+.calc {
+    width: 13.5rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .6rem;
+}
+
+.top_info {
+    color: var(--txt-color-display);
+    font-size: .8rem;
+    display: flex;
+    align-items: flex-end;
+
+    transition: var(--transition-delay);
+}
+
+.themes {
+    margin-left: auto;
+    margin-bottom: 3px;
+    font-size: .34rem;
+    font-weight: 400;
+
+    display: grid;
+    grid-template-columns: auto 1.7rem;
+}
+
+.themes > button {
+    height: 20px;
+    width: 54px;
+    padding: 4px;
+    background-color: var(--background-controls);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.themes > button > div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--key-background-equals);
+
+    transform: translateX(var(--transform-x));
+    transition: transform 1s;
+}
+
+#label {
+    margin-right: .6rem;
+    padding-top: 5px;
+}
+
+.toggle_info {
+    padding-bottom: 3px;
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.display {
+    height: 3rem;
+    padding: 0 .7rem;
+    background-color: var(--background-display);
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+
+    transition: var(--transition-delay);
+}
+
+.display > p {
+    color: var(--txt-color-display);
+    margin-left: auto;
+}
+
+.controls {
+    padding: .7rem;
+    background-color: var(--background-controls);
+    border-radius: 7px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 50px;
+    gap: .6rem;
+
+    transition: var(--transition-delay);
+}
+
+.controls > button {
+    padding-top: 4px;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: .8rem;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+
+    background-color: var(--key-background-nums);
+    box-shadow: inset 0px -4px var(--key-shadow-nums);
+    color: var(--txt-color-controls);
+
+    transition: var(--transition-delay);
+}
+
+button.del,
+button.reset {
+    background-color: var(--key-background-del);
+    color: var(--txt-color-del);
+    box-shadow: inset 0px -4px var(--key-shadow-del);
+    font-size: .6rem;
+}
+
+button.equals {
+    background-color: var(--key-background-equals);
+    color: var(--txt-color-equals);
+    box-shadow: inset 0px -4px var(--key-shadow-equals);
+    font-size: .6rem;
+}
+
+.bottom {
+    grid-column: span 2;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+    .calc {
+        width: 90%;
+    }
+    .controls {
+        gap: .4rem;
+    }
+}
