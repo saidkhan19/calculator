@@ -84,7 +84,7 @@ p {
 
 .calc {
     width: 13.5rem;
-    min-height: 100vh;
+    min-height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -222,6 +222,7 @@ button.equals {
 @media (max-width: 500px) {
     .calc {
         width: 90%;
+        margin-top: .3rem;
     }
     .controls {
         gap: .4rem;
