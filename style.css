@@ -222,7 +222,7 @@ button.equals {
 @media (max-width: 500px) {
     .calc {
         width: 90%;
-        margin-top: .6rem;
+        margin-top: .3rem;
     }
     .controls {
         gap: .4rem;
