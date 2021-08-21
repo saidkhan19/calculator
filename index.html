@@ -22,29 +22,31 @@
       </div>
     </div>
     <div class="display">
-      <p class="number">23</p>
+      <p id="number"></p>
     </div>
     <div class="controls">
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
+      <button onclick = "press(event)">7</button>
+      <button onclick = "press(event)">8</button>
+      <button onclick = "press(event)">9</button>
       <button class="del">DEL</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>-</button>
-      <button>.</button>
-      <button id="0">0</button>
-      <button id="/">/</button>
-      <button id="x">x</button>
-      <button class="bottom reset">RESET</button>
-      <button class="bottom equals">=</button>
+      <button onclick = "press(event)">4</button>
+      <button onclick = "press(event)">5</button>
+      <button onclick = "press(event)">6</button>
+      <button onclick = "operation(event)">+</button>
+      <button onclick = "press(event)">1</button>
+      <button onclick = "press(event)">2</button>
+      <button onclick = "press(event)">3</button>
+      <button onclick = "operation(event)">-</button>
+      <button id="dot">.</button>
+      <button onclick = "press(event)">0</button>
+      <button onclick = "operation(event)">/</button>
+      <button onclick = "operation(event)">x</button>
+      <button onclick = "reset()" class="bottom reset">RESET</button>
+      <button onclick = "equals()" class="bottom equals">=</button>
     </div>
   </div>
+  <script src="themes.js"></script>
+  <script src="big.js-master/big.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

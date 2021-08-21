@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
 
-:root{
+body {
     --background: hsl(222, 26%, 31%);
     --background-controls: hsl(223, 31%, 20%);
     --background-display: hsl(224, 36%, 15%);
@@ -21,19 +21,6 @@
 
     --transition-delay: .5s;
     --transform-x: 0px;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 32px;
-    font-family: 'Spartan', sans-serif;
-    font-weight: 700;
-    background-color: var(--background);
-
-    transition: var(--transition-delay);
 }
 
 body.theme_2 {
@@ -78,13 +65,26 @@ body.theme_3 {
     --transform-x: 34px;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 32px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    background-color: var(--background);
+
+    transition: var(--transition-delay);
+}
+
 p {
     margin: 0;
 }
 
 .calc {
     width: 13.5rem;
-    height: 100%;
+    min-height: 100vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -120,6 +120,7 @@ p {
     outline: none;
     border-radius: 10px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .themes > button > div {
@@ -145,10 +146,12 @@ p {
 }
 
 .display {
+    position: relative;
     height: 3rem;
     padding: 0 .7rem;
     background-color: var(--background-display);
     border-radius: 7px;
+    overflow: hidden;
 
     display: flex;
     align-items: center;
@@ -156,9 +159,11 @@ p {
     transition: var(--transition-delay);
 }
 
-.display > p {
+.display #number {
+    position: absolute;
+    right: 0;
     color: var(--txt-color-display);
-    margin-left: auto;
+    margin: 0 .7rem;
 }
 
 .controls {
@@ -217,8 +222,12 @@ button.equals {
 @media (max-width: 500px) {
     .calc {
         width: 90%;
+        margin-top: .6rem;
     }
     .controls {
         gap: .4rem;
+    }
+    .display {
+        height: 2.4rem;
     }
 }
